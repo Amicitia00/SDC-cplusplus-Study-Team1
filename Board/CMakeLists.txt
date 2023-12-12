@@ -27,10 +27,6 @@ add_executable(class_test main.cpp
         console/window/console_window.h
         console/user_keyboard/user_keyboard_input.cpp
         console/user_keyboard/user_keyboard_input.h
-        account/service/response/AccountResponse.cpp
-        account/service/response/AccountResponse.h
-        account/service/request/AccountRequest.cpp
-        account/service/request/AccountRequest.h
         account/service/AccountService.h
         account/service/AccountServiceImpl.cpp
         account/service/AccountServiceImpl.h
@@ -55,6 +51,23 @@ add_executable(class_test main.cpp
         ui/controller/UiControllerCommand.h
         ui/controller/UiController.cpp
         ui/controller/UiController.h
+        account/controller/request_form/AccountLoginRequestForm.cpp
+        account/controller/request_form/AccountLoginRequestForm.h
+        account/controller/response_form/AccountLoginResponseForm.cpp
+        account/controller/response_form/AccountLoginResponseForm.h
+        account/service/request/AccountLoginRequest.cpp
+        account/service/request/AccountLoginRequest.h
+        account/service/response/AccountLoginResponse.cpp
+        account/service/response/AccountLoginResponse.h
+        account/controller/request_form/AccountRegisterRequestForm.cpp
+        account/controller/request_form/AccountRegisterRequestForm.h
+        account/controller/response_form/AccountRegisterResponseForm.cpp
+        account/controller/response_form/AccountRegisterResponseForm.h
+        account/service/request/AccountRegisterRequest.cpp
+        account/service/request/AccountRegisterRequest.h
+        account/service/response/AccountRegisterResponse.cpp
+        account/service/response/AccountRegisterResponse.h
+
 )
 
 target_include_directories(class_test PRIVATE ${LIBMYSQLCLIENT_INCLUDE_DIRS})

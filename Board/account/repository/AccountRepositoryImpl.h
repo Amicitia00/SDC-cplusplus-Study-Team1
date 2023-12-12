@@ -8,12 +8,14 @@
 
 
 #include "AccountRepository.h"
+#include "../service/request/AccountLoginRequest.h"
 
 class AccountRepositoryImpl : public AccountRepository {
 
 public:
-    std::vector<Account> registerinfosave() override;
-    std::vector<Account> login() override;
+    Account *registerinfosave(Account *account) override;
+    static AccountRepositoryImpl& getInstance();
+
 };
 
 

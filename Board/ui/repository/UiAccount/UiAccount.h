@@ -7,12 +7,15 @@
 
 #include <vector>
 #include "../../../board/service/response/BoardResponse.h"
+#include "../../../account/controller/request_form/AccountLoginRequestForm.h"
+#include "../../../account/controller/request_form/AccountRegisterRequestForm.h"
 
 class UiAccount {
 public:
     virtual ~UiAccount() = default;
-    virtual std::vector<BoardResponse> UiServiceLoginHandler() = 0;
-    virtual std::vector<BoardResponse> UiServiceCreateAccountHandler() = 0;
+    virtual AccountLoginRequestForm *UiServiceLoginHandler() = 0;
+    virtual AccountRegisterRequestForm *UiServiceCreateAccountHandler() = 0;
+    // virtual std::vector<BoardResponse> UiServiceCreateAccountHandler() = 0;
     virtual std::vector<BoardResponse> UiServiceExitHandler() = 0;
 
 };

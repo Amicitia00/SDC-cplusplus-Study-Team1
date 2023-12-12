@@ -6,10 +6,12 @@
 #include <iostream>
 #include "UiAccountImpl.h"
 #include "../../../board/service/response/BoardResponse.h"
+#include "../../../account/controller/request_form/AccountLoginRequestForm.h"
+#include "../../../account/controller/request_form/AccountRegisterRequestForm.h"
 
 
-std::vector<BoardResponse> UiAccountImpl::UiServiceLoginHandler() {
-    std::vector<BoardResponse> boardResponses;
+AccountLoginRequestForm *UiAccountImpl::UiServiceLoginHandler() {
+
     std::cout << "로그인을 해주세요" << std::endl;
 
     std::string user;
@@ -21,14 +23,14 @@ std::vector<BoardResponse> UiAccountImpl::UiServiceLoginHandler() {
     std::cin >> password;
 
     std::cout <<"ID : "<< user << "비밀번호 : " <<password << std::endl; //확인용
-    
 
-    return boardResponses;
+    return new AccountLoginRequestForm(user, password);
 }
 
-std::vector<BoardResponse> UiAccountImpl::UiServiceCreateAccountHandler()
+//std::vector<BoardResponse> UiAccountImpl::UiServiceCreateAccountHandler()
+AccountRegisterRequestForm *UiAccountImpl::UiServiceCreateAccountHandler()
 {
-    std::vector<BoardResponse> boardResponses;
+    //std::vector<BoardResponse> boardResponses;
     std::cout << "회원가입을 위한 정보를 기입하세요" << std::endl;
 
     std::string create_user;
@@ -41,7 +43,8 @@ std::vector<BoardResponse> UiAccountImpl::UiServiceCreateAccountHandler()
 
     std::cout <<"ID : "<< create_user << "비밀번호 : " <<create_password << std::endl; //확인용
 
-    return boardResponses;
+    return new AccountRegisterRequestForm(create_user,create_password);
+    //return boardResponses;
 }
 
 std::vector<BoardResponse> UiAccountImpl::UiServiceExitHandler()

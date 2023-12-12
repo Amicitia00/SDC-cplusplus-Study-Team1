@@ -7,14 +7,14 @@
 
 #include <vector>
 #include "../entity/Account.h"
+#include "../service/request/AccountLoginRequest.h"
 
 class AccountRepository {
     std::string id;
     std::string pw;
 public:
     virtual ~AccountRepository() = default;
-    virtual std::vector<Account> registerinfosave() = 0;
-    virtual std::vector<Account> login() = 0;
+    virtual Account *registerinfosave(Account *account) = 0;
 };
 
 

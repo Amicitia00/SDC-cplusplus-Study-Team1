@@ -9,11 +9,12 @@
 #include <sys/user.h>
 #include "UiAccount.h"
 #include "../../../board/service/response/BoardResponse.h"
+#include "../../../account/controller/request_form/AccountLoginRequestForm.h"
 
 class UiAccountImpl : public UiAccount {
 public:
-    std::vector<BoardResponse> UiServiceLoginHandler() override;
-    std::vector<BoardResponse> UiServiceCreateAccountHandler() override;
+    AccountLoginRequestForm *UiServiceLoginHandler() override;
+    AccountRegisterRequestForm *UiServiceCreateAccountHandler() override;
     std::vector<BoardResponse> UiServiceExitHandler() override;
 };
 
