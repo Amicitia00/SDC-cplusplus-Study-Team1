@@ -8,8 +8,8 @@
 #include "../../../board/service/response/BoardResponse.h"
 
 
-std::vector<AccountLoginRequestForm> UiAccountImpl::UiServiceLoginHandler() {
-    std::vector<AccountLoginRequestForm> AccountLoginRequestForm(const std::string& account_id, const std::string& password);
+std::vector<BoardResponse> UiAccountImpl::UiServiceLoginHandler() {
+    std::vector<BoardResponse> boardResponses;
     std::cout << "로그인을 해주세요" << std::endl;
 
     std::string user;
@@ -23,7 +23,7 @@ std::vector<AccountLoginRequestForm> UiAccountImpl::UiServiceLoginHandler() {
     std::cout <<"ID : "<< user << "비밀번호 : " <<password << std::endl; //확인용
     
 
-    return AccountLoginRequestForm(user, password);
+    return boardResponses;
 }
 
 std::vector<BoardResponse> UiAccountImpl::UiServiceCreateAccountHandler()
